@@ -1,0 +1,60 @@
+{{!-- ../app/templates/components/x-uploader.hbs --}}
+<div class="items">
+  {{#each queue as |QueuedFile index|}}
+    <div
+        class="item {{if (logical-or (is-not QueuedFile.valid) (array-item errors index)) 'invalid' 'valid'}}" {{action 'remove' QueuedFile bubbles=false}}>
+      <div class="inner">
+        <div class="thumbnail">
+          {{#if QueuedFile.thumbnail}}
+            <img src="{{QueuedFile.thumbnail}}"/>
+          {{else}}
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhE
+UgAAASwAAACpCAYAAACRdwCqAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdp
+bj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1
+NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJo
+dHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlw
+dGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAv
+IiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RS
+ZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpD
+cmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJ
+RD0ieG1wLmlpZDpCNDU5MDQ1NThGQ0ExMUU1QkY2OUFENkM0ODVCRkYwQyIgeG1wTU06RG9jdW1l
+bnRJRD0ieG1wLmRpZDpCNDU5MDQ1NjhGQ0ExMUU1QkY2OUFENkM0ODVCRkYwQyI+IDx4bXBNTTpE
+ZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI0NTkwNDUzOEZDQTExRTVCRjY5
+QUQ2QzQ4NUJGRjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkI0NTkwNDU0OEZDQTExRTVC
+RjY5QUQ2QzQ4NUJGRjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBt
+ZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+DSCcAQAAA4FJREFUeNrs3MFqE0EYwPEd09LosRcFxUPB
+UkT7QD5HX8OCLyH4NHoQKyiC0h4UerZV0/FbuiDmkNSakpmd3w8+CoUenG3+7k6aSTnnDqAGtywB
+IFgAggUIFoBgAQgWIFgAggUgWIBgAQgWgGABggUgWACCBQgWgGABCBYgWACCBSBYgGABCBaAYAGC
+BSBYAIIF1GbDEpQvpfQ/P/7YCl5NzvmdVSj8tRAXySqMO1jvY2ZWcalJvBb2LINgsd5gucBXv8NK
+VqFs9rAAwQJYNZvu7TmL+TJ8bfER6CLmTszDmC2/DoJF2U5iDmKOYjYb/Pf/iHkScxiz49dBsCjb
+ecyHmI8Nr8F0WAcqYw+rPf1j4KTxNZg0+jgsWACChbsLmGMPq41HQHCHBSBYAIIF1MweVh3uxWxb
+hqVOY75aBsFivV7EPO2cvLBI/+bCm5hnlmLEF9nxMhVcpJRcpH8L1zL7Ma9i/jr/yvEy5bOHBQgW
+wKrZw6pT/8Hdz50jYhwRI1hU4LhzREz/JsTzzhExgkUVd1iOiHFETHPsYdXJETE+xC1YAIIFIFiA
+YAEIFoBgAYIFIFgAggUIFoBgAQgWIFgAggUgWIBgAQgWgGABggUgWACCBQgWgGABCBYgWACCBQgW
+gGABCBYgWACCBSBYgGABCBaAYAGCBSBYAIIFCBaAYAEIFiBYAIIFIFiAYAEIFoBgAYIFIFgAggUI
+FoBgAQgWIFgAggUIFoBgAQgWIFgAggUgWIBgAQgWgGABggUgWLA+s5hsGeqzYQkYua2YBzHTIVI/
+Yx4N30ewoCh9rA5j9mJ+DdHq43Xf0ggWlGY6xGrXUtTPHhZjl4c7KwQLipdiNi2DR0KowfeYt8Nd
+1qI7rYmlEixYt5OYg+7Pu4QIFhTrPOaTZRgHe1iAYAEIFiBYAIIFIFiAYFGD/u+JZo2vgSNiGuTv
+sOrUH42yO7xoW/zYiSNiGpVy9p9U8RcppfmL1P8x5HHMWXf5WbnWXMTc7i6PjpmP1rXXw2tBsLiZ
+YLFguQRrvOxhAYIFsGo23evwMma/867YskfB15Zh5BfZc3sFFymlu/Fl20osdRrz7bo/7LUgWAAr
+Yw8LECwAwQIEC0CwAAQLECwAwQIQLECwAAQLQLAAwQIQLADBAgQLQLAABAsQLADBAhAsQLAABAtA
+sADBAhAsAMECBAvgpvwWYADV43NNqeinRQAAAABJRU5ErkJggg=="/>
+          {{/if}}
+          {{#if (logical-or (is-not QueuedFile.valid) (array-item errors index))}}
+            <div class="error-message">
+              <div class="text">
+                {{#if QueuedFile.error}}{{QueuedFile.error}}{{else}}{{array-item errors index}}{{/if}}
+              </div>
+            </div>
+          {{/if}}
+        </div>
+        <div class="info">
+          {{QueuedFile.file.name}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+<div class="add-file" {{action 'add'}}>{{addLabel}}<div class="counter">{{counter}}</div></div>

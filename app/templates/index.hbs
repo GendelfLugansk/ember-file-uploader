@@ -1,0 +1,4 @@
+{{!--../app/templates/index.hbs--}}
+{{input value=title}}
+{{x-uploader onInit='uploaderInit' acceptedTypes='image/*' maxFiles=5 errors=errors}}
+<button {{action 'submit'}}>Send</button>
