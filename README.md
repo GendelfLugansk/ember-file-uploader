@@ -1,7 +1,7 @@
 # Ember-file-uploader
 
 This is a demo application, that shows how ajax upload can be implemented in Ember.js. This is only a client application,
-server to handle uploads is not included.
+server to handle uploads is not included. A brief explanation can be found in my [blog](http://blog.gennady.pp.ua/how-to-upload-files-with-ember-js-creating-your-own-uploader/)
 
 ## Prerequisites
 
